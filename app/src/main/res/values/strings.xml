@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Household Servies2.1</string>
+
+    <!--Phone password-->
+    <string name="phone">Phone Number</string>
+    <string name="phone_desc">Enter your phonr no by selecting your country code..</string>
+
+
+    <!--OTP screen-->
+    <string name="otp_code_text">Co\nde</string>
+    <string name="otp_verification_text">Verification</string>
+    <string name="otp_description_text">Enter one time password sent on your given \n Number</string>
+
+    <!--PIN screen-->
+    <string name="pin_text">AREA</string>
+    <string name="pin_verification_text">Verification</string>
+    <string name="pin_description_text">Choose the AREA you want service</string>
+
+    <string name="next_btn">NEXT</string>
+
+    <!--Forgot password-->
+    <string name="forgot_password">Forgot Password...?</string>
+    <string name="forgot_password_detail">Provide your account\'s email for which you want to RESET your password ! </string>
+
+    <!--Make selection-->
+    <string name="make_selection">Make Selection</string>
+    <string name="make_selection_detail">Select which contact detail should we used to reset your password ?</string>
+
+    <!--Make selection-->
+    <string name="new_credentials">New Credentials</string>
+    <string name="new_credentials_detail">Your identity has been verified set your newe password. </string>
+
+    <!--OK selection-->
+    <string name="password_updated">Password Updated</string>
+    <string name="password_updated_des">Your password has been successfully updated.!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

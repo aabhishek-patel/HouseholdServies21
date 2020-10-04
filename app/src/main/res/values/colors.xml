@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#455cde</color>
+    <color name="colorPrimaryDark">#403d3d</color>
+    <color name="colorAccent">#c2bdbf</color>
+
+
+    <!-- colors for button style -->
+
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <!--profile color-->
+
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+    <color name="specialsky">#4fc3f7</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="transprency">#00000000</color>
+
+
+    <color name="grey">#cfcfcf</color>
+    <color name="skyBlue">#18FFFF</color>
+    <color name="lightGrey">#EEEEEE</color>
+    <color name="yellow">#EEFF41</color>
+    <color name="lightblue">#81D4FA</color>
+    <color name="green">#05A58A</color>
+    <color name="lightgreen">#75DFCD</color>
+    <color name="facebook">#3b5998</color>
+    <color name="instagram">#8B0000</color>
+    <color name="TransparentWhite">#cccccc</color>
+
+
+    <!-- colors for tab and screent text -->
+
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+
+
+
+    <color name="pink">#FFC0CB</color>
+    <color name="hotpink">#FFB6C1</color>
+</resources>

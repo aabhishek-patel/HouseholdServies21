@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "9345279368",
+    "firebase_url": "https://householdservies21.firebaseio.com",
+    "project_id": "householdservies21",
+    "storage_bucket": "householdservies21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9345279368:android:04f952883073359517863d",
+        "android_client_info": {
+          "package_name": "com.formate.householdservies21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9345279368-lfb3mcl7ggk6b9t3joviqhhv2ngj7kgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.formate.householdservies21",
+            "certificate_hash": "cfe7243d68cdb7b2afc0a94af7508579b0132d0a"
+          }
+        },
+        {
+          "client_id": "9345279368-kd98tvqgtpo5oh67g6vv20u7mbblmrbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAovZCM1RRTkpE_Ql3IJCcW4jKpN7Y-aAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9345279368-kd98tvqgtpo5oh67g6vv20u7mbblmrbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="@font/bungee"
+            android:text="Welcome"
+            android:textColor="#000"
+            android:textSize="40sp"
+            android:transitionName="logo_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:text="SignUp to get help"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:transitionName="logo_desc"
+            app:fontFamily="@font/antic" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/boy"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/black_border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:hint="Name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/black_border"
+            android:layout_marginTop="10dp"
+            android:hint="Aadhar No"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/black_border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:hint="Phone"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/black_border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:hint="Rate"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:gravity="center">
+        </Spinner>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
