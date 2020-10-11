@@ -101,7 +101,7 @@ public class SignINActivity extends AppCompatActivity {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 pd.dismiss();
-                                                Intent intent = new Intent(SignINActivity.this, DashboardActivity.class);
+                                                Intent intent = new Intent(SignINActivity.this, PinActivity.class);
                                                 //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 //Pass all fields to the next activity
                                                 intent.putExtra("fullname", get_fullname);

@@ -1,12 +1,10 @@
 package com.formate.householdservies21.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,13 +13,11 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.formate.householdservies21.Model.UserHelperClass;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -29,15 +25,16 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import com.formate.householdservies21.Fragment.ProfileFragment;
 import com.formate.householdservies21.Model.EmpHelperClass;
 import com.formate.householdservies21.R;
+import com.squareup.picasso.Picasso;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewHolder>{
 
     private Context mContext;
-    private List<EmpHelperClass> mUsers;
+    private List<UserHelperClass> mUsers;
 
     private FirebaseUser firebaseUser;
 
-    public UserAdapter(Context mContext, List<EmpHelperClass> mUsers) {
+    public UserAdapter(Context mContext, List<UserHelperClass> mUsers) {
         this.mContext = mContext;
         this.mUsers = mUsers;
     }
@@ -45,7 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewHolder>{
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.user_item,viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.user_profile,viewGroup,false);
         return new UserAdapter.viewHolder(view);
     }
 
@@ -54,31 +51,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewHolder>{
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        final EmpHelperClass empHelperClass = mUsers.get(i);
+        final UserHelperClass userHelperClass = mUsers.get(i);
 
 
-        viewHolder.fullname_emp.setText(empHelperClass.getName());
-        viewHolder.phoneNo_emp.setText(empHelperClass.getPhoneNo());
+        /*viewHolder.fullname_field.setText(userHelperClass.getFullname());
+        viewHolder.email_field.setText(userHelperClass.getEmail());*/
+        viewHolder.full_name_profile.getEditText().setText(userHelperClass.getFullname());
+        viewHolder.username_profile.getEditText().setText(userHelperClass.getUsername());
+        viewHolder.phone_no_profile.getEditText().setText(userHelperClass.getPhoneNo());
+        viewHolder.password_profile.getEditText().setText(userHelperClass.getPassword());
 
-        Glide.with(mContext).load(empHelperClass.getImageurl()).into(viewHolder.image_profile_emp);
-
-
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit();
-                editor.putString("profileid", empHelperClass.getPhoneNo());
-                editor.apply();
-
-
-
-                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
-            }
-        });
-
-
-
+        Picasso.get()
+                .load(mUsers.get(i).getImageurl())
+                .placeholder(R.drawable.boy)
+                .fit()
+               // .centerCrop()
+                .into(viewHolder.profile_image);
     }
 
     @Override
@@ -88,18 +76,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewHolder>{
 
     public class viewHolder extends RecyclerView.ViewHolder{
 
-        public TextView phoneNo_emp;
-        public TextView fullname_emp;
-        public CircleImageView image_profile_emp;
-        public ImageView about_icon_emp;
+        //public TextView fullname_field,email_field;
+        public TextInputLayout full_name_profile,username_profile,
+                phone_no_profile,password_profile;
+        public ImageView profile_image;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 
-            phoneNo_emp = itemView.findViewById(R.id.phone_emp);
-            fullname_emp = itemView.findViewById(R.id.fullname_emp);
-            image_profile_emp = itemView.findViewById(R.id.image_profile_emp);
-            about_icon_emp = itemView.findViewById(R.id.about_icon_emp);
+            profile_image = itemView.findViewById(R.id.profile_image);
+            //fullname_field = itemView.findViewById(R.id.fullname_field);
+            //email_field = itemView.findViewById(R.id.email_field);
+            full_name_profile = itemView.findViewById(R.id.full_name_profile);
+            username_profile = itemView.findViewById(R.id.username_profile);
+            phone_no_profile = itemView.findViewById(R.id.phone_no_profile);
+            password_profile = itemView.findViewById(R.id.password_profile);
         }
     }
 

@@ -42,7 +42,6 @@ public class DashboardFragment extends Fragment {
             makeup_text, makeup_text_desc, gym_text, gym_text_desc;
 
     FirebaseUser firebaseUser;
-    String profileid;
 
 
     @Override
@@ -52,9 +51,6 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
-        profileid = prefs.getString("profileid","none");
 
         //hooks
         fullname = view.findViewById(R.id.fullname);
@@ -113,7 +109,7 @@ public class DashboardFragment extends Fragment {
         imagefitness = view.findViewById(R.id.imagefitness);
         textfitness = view.findViewById(R.id.textfitness);
 
-        userInfo();
+        //userInfo();
 
         //profile
         profile_image.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +146,7 @@ public class DashboardFragment extends Fragment {
         });
 
         //maid
-        /*housemaid_icon.setOnClickListener(new View.OnClickListener() {
+        housemaid_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment mFragment = new MaidFragment();
@@ -159,10 +155,10 @@ public class DashboardFragment extends Fragment {
                         .addToBackStack(DashboardFragment.class.getSimpleName())
                         .commit();
             }
-        });*/
+        });
 
         //maid
-        /*imagemaid.setOnClickListener(new View.OnClickListener() {
+        imagemaid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment mFragment = new MaidFragment();
@@ -171,12 +167,12 @@ public class DashboardFragment extends Fragment {
                         .addToBackStack(DashboardFragment.class.getSimpleName())
                         .commit();
             }
-        });*/
+        });
 
         return view;
     }
 
-    private void userInfo(){
+    /*private void userInfo(){
         DatabaseReference reference  = FirebaseDatabase.getInstance().getReference("Users").child(profileid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -199,6 +195,6 @@ public class DashboardFragment extends Fragment {
 
             }
         });
-    }
+    }*/
 
 }

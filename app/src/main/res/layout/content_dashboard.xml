@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".DashboardActivity">
 
-    <ScrollView
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -62,7 +62,7 @@
 
 
             </RelativeLayout>
-            <!--1 st Row-->
+            &lt;!&ndash;1 st Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--2 nd Row-->
+            &lt;!&ndash;2 nd Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -211,7 +211,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--3 rd Row-->
+            &lt;!&ndash;3 rd Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -286,7 +286,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/grey" />
 
-            <!--4 th Row-->
+            &lt;!&ndash;4 th Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -412,7 +412,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--5 th Row-->
+            &lt;!&ndash;5 th Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -538,7 +538,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--6 th Row-->
+            &lt;!&ndash;6 th Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -663,7 +663,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--7 th Row-->
+            &lt;!&ndash;7 th Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -738,7 +738,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--8 th Row-->
+            &lt;!&ndash;8 th Row&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -812,7 +812,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/grey" />
 
-            <!--9 th Row-->
+            &lt;!&ndash;9 th Row&ndash;&gt;
 
 
             <LinearLayout
@@ -884,7 +884,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </ScrollView>-->
 
 
 

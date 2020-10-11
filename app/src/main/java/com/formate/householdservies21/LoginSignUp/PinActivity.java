@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.formate.householdservies21.DashboardActivity;
+import com.formate.householdservies21.Fragment.DashboardFragment;
+import com.formate.householdservies21.Fragment.ProfileFragment;
 import com.formate.householdservies21.Model.UserHelperClass;
 import com.formate.householdservies21.ProfileActivity;
 import com.formate.householdservies21.R;
@@ -65,13 +67,6 @@ public class PinActivity extends AppCompatActivity {
                 finish();
             }
         });
-        get_area.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                finish();
-            }
-        });
     }
 
     private void retrieveData() {
@@ -98,6 +93,14 @@ public class PinActivity extends AppCompatActivity {
     public void getArea(View view) {
         String area = spinner.getSelectedItem().toString();
 
-        //UserHelperClass userHelperClass = new UserHelperClass(area);
+       //UserHelperClass userHelperClass = new UserHelperClass(area);
+
+        getSupportFragmentManager().beginTransaction()
+                   .add(android.R.id.content, new ProfileFragment()).commit();
+
+
+    /*Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+        startActivity(intent);
+        finish();*/
     }
 }

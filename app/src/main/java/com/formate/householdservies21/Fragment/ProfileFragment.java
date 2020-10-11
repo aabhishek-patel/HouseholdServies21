@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.formate.householdservies21.Adapter.EmpAdapter;
+import com.formate.householdservies21.Adapter.UserAdapter;
+import com.formate.householdservies21.Model.EmpHelperClass;
 import com.formate.householdservies21.Model.UserHelperClass;
 import com.formate.householdservies21.R;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,20 +33,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
 
-    Button logout;
-    ImageView profile_image;
-    TextView fullname_field , email_field;
-    TextInputLayout full_name_profile,username_profile,phone_no_profile,password_profile;
+    RecyclerView recyclerView;
+    UserAdapter userAdapter;
+    List<UserHelperClass> mUsers;
 
-    FirebaseUser firebaseUser;
-    FirebaseDatabase database;
-    String profileid;
-
+    DatabaseReference reference;
 
 
     @Override
@@ -49,51 +54,39 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
-        SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
-        profileid = prefs.getString("profileid","none");
+        mUsers = new ArrayList<UserHelperClass>();
 
-        profile_image = view.findViewById(R.id.profile_image);
-        fullname_field = view.findViewById(R.id.fullname_field);
-        email_field = view.findViewById(R.id.email_field);
-        full_name_profile = view.findViewById(R.id.full_name_profile);
-        username_profile = view.findViewById(R.id.username_profile);
-        phone_no_profile = view.findViewById(R.id.phone_no_profile);
-        password_profile = view.findViewById(R.id.password_profile);
-        logout = view.findViewById(R.id.logout);
-
-        userInfo();
-
-
-        return view;
-    }
-
-    private void userInfo(){
-        DatabaseReference reference  = FirebaseDatabase.getInstance().getReference("Users").child(profileid);
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (getContext() == null){
-                    return;
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    UserHelperClass userHelperClass = dataSnapshot1.getValue(UserHelperClass.class);
+                    mUsers.add(userHelperClass);
                 }
 
-                UserHelperClass userHelperClass = dataSnapshot.getValue(UserHelperClass.class);
-
-                Glide.with(getContext()).load(userHelperClass.getImageurl());
-                fullname_field.setText(userHelperClass.getFullname());
-                email_field.setText(userHelperClass.getEmail());
-
+                userAdapter = new UserAdapter(getContext(), mUsers);
+                recyclerView.setAdapter(userAdapter);
+                //progress_bar.setVisibility(View.INVISIBLE);
+                userAdapter.notifyDataSetChanged();
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(getContext(), "Opsss... Somthing is wrong.", Toast.LENGTH_SHORT).show();
+                //progress_bar.setVisibility(View.INVISIBLE);
             }
         });
+
+        return view;
     }
-
-
 
 }

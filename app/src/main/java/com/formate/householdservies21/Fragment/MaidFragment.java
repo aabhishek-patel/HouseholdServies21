@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.formate.householdservies21.Adapter.EmpAdapter;
 import com.formate.householdservies21.Adapter.UserAdapter;
 import com.formate.householdservies21.Model.EmpHelperClass;
 import com.formate.householdservies21.R;
@@ -29,9 +31,11 @@ import java.util.List;
  */
 public class MaidFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private UserAdapter userAdapter;
-    private List<EmpHelperClass> mUsers;
+    RecyclerView recyclerView;
+    EmpAdapter empAdapter;
+    List<EmpHelperClass> mEmp;
+
+    DatabaseReference reference;
 
 
     @Override
@@ -42,19 +46,46 @@ public class MaidFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
-        mUsers = new ArrayList<>();
-        userAdapter = new UserAdapter(getContext(), mUsers);
+        mEmp = new ArrayList<EmpHelperClass>();
+
+        /*userAdapter = new UserAdapter(getContext(), mUsers);
         recyclerView.setAdapter(userAdapter);
 
-        readUsers();
+        readUsers();*/
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Employee");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
+                {
+                    EmpHelperClass empHelperClass = dataSnapshot1.getValue(EmpHelperClass.class);
+                    mEmp.add(empHelperClass);
+                }
+
+                empAdapter = new EmpAdapter(getContext(),mEmp);
+                recyclerView.setAdapter(empAdapter);
+                //progress_bar.setVisibility(View.INVISIBLE);
+                empAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getContext(), "Opsss... Somthing is wrong.", Toast.LENGTH_SHORT).show();
+                //progress_bar.setVisibility(View.INVISIBLE);
+            }
+        });
 
         return view;
     }
 
 
-    private void readUsers() {
+    /*private void readUsers() {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.addValueEventListener(new ValueEventListener() {
@@ -75,5 +106,5 @@ public class MaidFragment extends Fragment {
 
             }
         });
-    }
+    }*/
 }
