@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MaidActivity"></activity>
+        <activity android:name=".MaidActivity"/>
         <activity android:name=".Emp_Detail_PopupActivity" />
         <activity android:name=".LoginSignUp.ForgetOtpActivity" />
         <activity android:name=".LoginSignUp.ForgetPhoneActivity" />
@@ -21,7 +21,7 @@
         <activity android:name=".LoginSignUp.MakeSelectionActivity" />
         <activity android:name=".LoginSignUp.ForgotPasswordActivity" />
         <activity android:name=".LoginSignUp.PinActivity" />
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".DashboardActivity"/>
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

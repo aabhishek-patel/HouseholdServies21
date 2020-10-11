@@ -5,12 +5,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.formate.householdservies21.Adapter.EmpAdapter;
@@ -35,6 +37,8 @@ public class MaidFragment extends Fragment {
     EmpAdapter empAdapter;
     List<EmpHelperClass> mEmp;
 
+    ImageView back_btn;
+
     DatabaseReference reference;
 
 
@@ -43,6 +47,8 @@ public class MaidFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_maid, container, false);
+
+        back_btn = view.findViewById(R.id.back_button);
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -53,10 +59,16 @@ public class MaidFragment extends Fragment {
 
         mEmp = new ArrayList<EmpHelperClass>();
 
-        /*userAdapter = new UserAdapter(getContext(), mUsers);
-        recyclerView.setAdapter(userAdapter);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DashboardFragment dFragment = new DashboardFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, dFragment);
+                transaction.commit();
+            }
+        });
 
-        readUsers();*/
 
         reference = FirebaseDatabase.getInstance().getReference().child("Employee");
         reference.addValueEventListener(new ValueEventListener() {
@@ -84,27 +96,4 @@ public class MaidFragment extends Fragment {
         return view;
     }
 
-
-    /*private void readUsers() {
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    EmpHelperClass empHelperClass = snapshot.getValue(EmpHelperClass.class);
-                    mUsers.add(empHelperClass);
-                }
-
-                userAdapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }*/
 }

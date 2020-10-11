@@ -44,7 +44,7 @@
                         android:layout_toRightOf="@+id/profile_image"
                         android:fontFamily="@font/bungee"
                         android:includeFontPadding="false"
-                        android:text="Abhishek Patel"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
@@ -58,7 +58,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/profile_image"
                         android:includeFontPadding="false"
-                        android:text="aabhishek_patel"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -156,8 +156,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -233,8 +233,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -387,8 +387,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -444,8 +444,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -480,8 +480,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -516,8 +516,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -573,8 +573,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -609,8 +609,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -645,8 +645,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <ImageView
@@ -697,8 +697,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -770,15 +770,15 @@
                     android:weightSum="1">
 
                     <LinearLayout
+                        android:id="@+id/makeupl"
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:id="@+id/makeupl"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -853,8 +853,8 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:background="@drawable/hover"
+                        android:clickable="true"
                         android:orientation="horizontal">
 
                         <LinearLayout

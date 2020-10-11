@@ -37,7 +37,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>-->
 
-    <include layout="@layout/fragment_dashboard" />
+    <!--<include layout="@layout/fragment_dashboard" />-->
 
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab3"

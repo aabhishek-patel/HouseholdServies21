@@ -96,12 +96,12 @@ public class PinActivity extends AppCompatActivity {
 
        //UserHelperClass userHelperClass = new UserHelperClass(area);
 
-        getSupportFragmentManager().beginTransaction()
+        /*getSupportFragmentManager().beginTransaction()
                    .add(android.R.id.content, new DashboardFragment()).commit();
+*/
 
-
-    /*Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+    Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
         startActivity(intent);
-        finish();*/
+        finish();
     }
 }
