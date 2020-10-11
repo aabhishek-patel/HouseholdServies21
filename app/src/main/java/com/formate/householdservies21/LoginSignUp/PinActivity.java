@@ -54,6 +54,7 @@ public class PinActivity extends AppCompatActivity {
 
         //getDSpin
         spinnerDataList = new ArrayList<>();
+        spinnerDataList.add(0, "Select Area from the list");
         adapter = new ArrayAdapter<String>(PinActivity.this,
                 R.layout.support_simple_spinner_dropdown_item,spinnerDataList);
 
@@ -96,7 +97,7 @@ public class PinActivity extends AppCompatActivity {
        //UserHelperClass userHelperClass = new UserHelperClass(area);
 
         getSupportFragmentManager().beginTransaction()
-                   .add(android.R.id.content, new ProfileFragment()).commit();
+                   .add(android.R.id.content, new DashboardFragment()).commit();
 
 
     /*Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);

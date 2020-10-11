@@ -112,7 +112,7 @@ public class DashboardFragment extends Fragment {
         //userInfo();
 
         //profile
-        profile_image.setOnClickListener(new View.OnClickListener() {
+        /*profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment mFragment = new ProfileFragment();
@@ -167,7 +167,7 @@ public class DashboardFragment extends Fragment {
                         .addToBackStack(DashboardFragment.class.getSimpleName())
                         .commit();
             }
-        });
+        });*/
 
         return view;
     }
